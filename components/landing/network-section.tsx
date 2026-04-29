@@ -6,17 +6,17 @@ const steps = [
   {
     number: "01",
     title: "Use",
-    description: "Interact with Aura. Generate real health intelligence through repeated, disciplined use.",
+    description: "Use Aura for real health work. Better questions create better signal.",
   },
   {
     number: "02",
     title: "Contribute",
-    description: "Builders improve agents. Validators score quality. Researchers synthesize frontier material. Specialists improve workflows and protocols.",
+    description: "Builders, validators, researchers, and specialists improve agents, workflows, and quality.",
   },
   {
     number: "03",
     title: "Earn",
-    description: "Useful contributions are rewarded through Aura's coordination layer.",
+    description: "Useful contributions earn ownership through Aura's coordination layer.",
   },
 ];
 
@@ -86,7 +86,7 @@ export function NetworkSection() {
         <p className={`text-xl text-muted-foreground leading-relaxed mb-16 max-w-2xl mx-auto text-center transition-all duration-700 delay-100 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
-          The network improves when people contribute. The token coordinates that. Aura begins as a product-first system. Over time, builders, validators, researchers, and specialists improve the network through useful work and participate in the value they help create.
+          Aura starts as a product-first system. Over time, contributors improve the network through useful work and share in the value they help create.
         </p>
 
         <div className="mb-18 grid gap-4 md:grid-cols-3 lg:gap-5">

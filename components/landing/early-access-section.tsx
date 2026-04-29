@@ -5,32 +5,32 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const criteria = [
-  "Active users of health data (labs, wearables, biomarkers)",
-  "Experience with supplements, peptides, or research-heavy protocols",
-  "Willingness to provide feedback and help shape the system",
-  "Serious intent for repeated, disciplined use",
+  "Doctors, scientists, technologists, biohackers, nutritionists, labs, and serious operators",
+  "Experience with health data, biomarkers, protocols, research, or real-world workflows",
+  "Willingness to collaborate, test ideas, and help shape the system",
+  "Serious intent to improve how private health intelligence should work",
 ];
 
 const onboardingSteps = [
   {
     number: "01",
-    label: "Application",
-    description: "Share your use case",
+    label: "Reach out",
+    description: "Share your background or use case",
   },
   {
     number: "02",
-    label: "Review",
-    description: "We assess fit and intent",
+    label: "Fit",
+    description: "We assess where you can contribute",
   },
   {
     number: "03",
     label: "Onboarding",
-    description: "Access and calibration",
+    description: "Access, context, and calibration",
   },
   {
     number: "04",
-    label: "Feedback",
-    description: "Shape the product together",
+    label: "Build",
+    description: "Help improve the product together",
   },
 ];
 
@@ -67,11 +67,10 @@ export function EarlyAccessSection() {
             <h2 className="text-4xl lg:text-5xl font-display tracking-tight mb-8">
               Built with
               <br />
-              serious users.
+              serious collaborators.
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Early access is designed for real users of the product. The goal is to bring in 
-              serious operators, observe repeated use, and improve the system before broader rollout.
+              Early access is for people who want to use, stress-test, and help shape Aura. We want strong operators and domain experts involved before broader rollout.
             </p>
 
             <div className="space-y-4 mb-10">
@@ -93,7 +92,7 @@ export function EarlyAccessSection() {
               size="lg"
               className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
             >
-              Request early access
+              Apply to collaborate
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
