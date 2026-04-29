@@ -106,6 +106,8 @@ function TypingLine({
 
 function ChatDemo() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const demoRef = useRef<HTMLDivElement>(null);
   const sequenceDurations = useMemo(
     () =>
       chatSequence.map((item) => {
@@ -116,6 +118,25 @@ function ChatDemo() {
   );
 
   useEffect(() => {
+    const node = demoRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isInView) {
+      return;
+    }
+
     const timeouts: number[] = [];
 
     const scheduleSequence = () => {
@@ -142,10 +163,10 @@ function ChatDemo() {
     return () => {
       timeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
     };
-  }, [sequenceDurations]);
+  }, [isInView, sequenceDurations]);
 
   return (
-    <div className="bg-background/5 border border-foreground/10 rounded-lg p-6 font-mono text-sm">
+    <div ref={demoRef} className="bg-background/5 border border-foreground/10 rounded-lg p-6 font-mono text-sm">
       {/* Header */}
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-foreground/10">
         <div className="w-3 h-3 rounded-full bg-foreground/20" />
@@ -155,7 +176,7 @@ function ChatDemo() {
       </div>
       
       {/* Chat messages */}
-      <div className="space-y-4">
+      <div className="min-h-[26rem] space-y-4 sm:min-h-[24rem]">
         {chatSequence.map((item, index) => {
           const isVisible = index <= activeIndex;
           const isActive = index === activeIndex;

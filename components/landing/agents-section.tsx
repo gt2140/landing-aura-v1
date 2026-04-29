@@ -2,6 +2,8 @@
 
 import { PixelIcon } from "@/components/landing/pixel-icon";
 import { StackingAgentCards } from "@/components/landing/stacking-agent-cards";
+import Link from "next/link";
+import { getDashboardLoginHref } from "@/lib/dashboard-url";
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +14,8 @@ function Tag({ children }: { children: React.ReactNode }) {
 }
 
 export function AgentsSection() {
+  const dashboardLoginHref = getDashboardLoginHref();
+
   return (
     <section id="agents" className="border-t border-black/[0.06] px-6 py-32 md:px-12 lg:px-20">
       <div className="mx-auto max-w-6xl">
@@ -34,7 +38,16 @@ export function AgentsSection() {
           </p>
         </div>
 
-        <StackingAgentCards />
+        <StackingAgentCards maxVisible={4} />
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            href={dashboardLoginHref}
+            className="inline-flex items-center rounded-full border border-black/10 bg-black/[0.02] px-5 py-3 text-xs tracking-[0.2em] text-black/45 transition-colors hover:border-black/20 hover:text-black/70"
+          >
+            LOG IN TO EXPLORE MORE
+          </Link>
+        </div>
       </div>
     </section>
   );

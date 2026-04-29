@@ -54,9 +54,9 @@ export function HeroSection() {
   }, [displayText, isDeleting, titleIndex]);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden md:min-h-screen">
       {/* Animated sphere background */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-40 pointer-events-none">
+      <div className="pointer-events-none absolute right-[-30%] top-[18%] h-[320px] w-[320px] opacity-25 sm:right-[-18%] sm:top-1/2 sm:h-[460px] sm:w-[460px] sm:-translate-y-1/2 sm:opacity-35 lg:right-0 lg:h-[800px] lg:w-[800px] lg:opacity-40">
         <AnimatedSphere />
       </div>
       
@@ -86,15 +86,15 @@ export function HeroSection() {
         ))}
       </div>
       
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-24 sm:py-28 lg:px-12 lg:py-40">
         {/* Eyebrow */}
         <div 
           className={`mb-8 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
-            <span className="w-8 h-px bg-foreground/30" />
+          <span className="inline-flex items-center gap-2 text-[11px] font-mono text-muted-foreground sm:gap-3 sm:text-sm">
+            <span className="h-px w-6 bg-foreground/30 sm:w-8" />
             Private intelligence for advanced health
           </span>
         </div>
@@ -102,7 +102,7 @@ export function HeroSection() {
         {/* Main headline */}
         <div className="mb-12">
           <h1 
-            className={`text-[clamp(2.5rem,8vw,6rem)] font-display leading-[0.95] tracking-tight transition-all duration-1000 ${
+            className={`text-[clamp(2.2rem,11vw,6rem)] font-display leading-[0.92] tracking-tight transition-all duration-1000 sm:text-[clamp(2.5rem,8vw,6rem)] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -115,7 +115,7 @@ export function HeroSection() {
                     ? "bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-violet-500 drop-shadow-[0_0_18px_rgba(99,102,241,0.22)]"
                     : "bg-gradient-to-r from-cyan-300 via-sky-400 to-fuchsia-400 drop-shadow-[0_0_22px_rgba(56,189,248,0.24)]"
                 }`}
-                style={{ width: "18ch" }}
+                style={{ width: "min(18ch, 100%)" }}
               >
                 {displayText}
                 <span className={`ml-1 inline-block h-[0.9em] w-px animate-pulse ${isDeleting ? "bg-fuchsia-400" : "bg-cyan-300"}`} />
@@ -126,7 +126,7 @@ export function HeroSection() {
         
         {/* Description */}
         <p 
-          className={`text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl transition-all duration-700 delay-200 ${
+          className={`max-w-xl text-base leading-relaxed text-muted-foreground sm:max-w-2xl sm:text-lg lg:text-2xl transition-all duration-700 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -135,7 +135,7 @@ export function HeroSection() {
         
         {/* CTAs - positioned below description on all screens */}
         <div 
-          className={`mt-12 lg:mt-16 flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
+          className={`mt-10 flex flex-col items-stretch gap-3 sm:mt-12 sm:flex-row sm:items-start sm:gap-4 lg:mt-16 transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -154,22 +154,22 @@ export function HeroSection() {
 
       {/* Stats - conceptual, not marketing */}
       <div 
-        className={`relative mt-10 px-6 lg:px-0 lg:absolute lg:bottom-24 lg:left-0 lg:right-0 transition-all duration-700 delay-500 ${
+        className={`relative mt-10 px-6 sm:mt-14 lg:px-0 lg:absolute lg:bottom-24 lg:left-0 lg:right-0 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="max-w-[1400px] mx-auto lg:px-12">
-          <div className="flex flex-wrap gap-6 lg:gap-24">
+          <div className="flex flex-wrap gap-x-6 gap-y-4 sm:gap-x-10 lg:gap-24">
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl lg:text-4xl font-display">6</span>
+              <span className="text-2xl font-display sm:text-3xl lg:text-4xl">6</span>
               <span className="text-sm text-muted-foreground">Specialized agents</span>
             </div>
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl lg:text-4xl font-display">E2E</span>
+              <span className="text-2xl font-display sm:text-3xl lg:text-4xl">E2E</span>
               <span className="text-sm text-muted-foreground">Private vault</span>
             </div>
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl lg:text-4xl font-display font-mono tracking-tighter">---</span>
+              <span className="text-2xl font-display font-mono tracking-tighter sm:text-3xl lg:text-4xl">---</span>
               <span className="text-sm text-muted-foreground">Longitudinal context</span>
             </div>
           </div>

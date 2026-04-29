@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const AGENTS = [
   {
@@ -74,16 +74,22 @@ function Tag({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function StackingAgentCards() {
+export function StackingAgentCards({ maxVisible = AGENTS.length }: { maxVisible?: number }) {
+  const visibleAgents = useMemo(() => AGENTS.slice(0, maxVisible), [maxVisible]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [depth, setDepth] = useState<number[]>(AGENTS.map(() => 0));
+  const [depth, setDepth] = useState<number[]>(visibleAgents.map(() => 0));
+
+  useEffect(() => {
+    setDepth(visibleAgents.map(() => 0));
+    cardRefs.current = visibleAgents.map((_, index) => cardRefs.current[index] ?? null);
+  }, [visibleAgents]);
 
   useEffect(() => {
     function onScroll() {
-      const nextDepth = AGENTS.map((_, index) => {
+      const nextDepth = visibleAgents.map((_, index) => {
         let count = 0;
 
-        for (let compareIndex = index + 1; compareIndex < AGENTS.length; compareIndex += 1) {
+        for (let compareIndex = index + 1; compareIndex < visibleAgents.length; compareIndex += 1) {
           const element = cardRefs.current[compareIndex];
           if (!element) continue;
           const rect = element.getBoundingClientRect();
@@ -100,11 +106,11 @@ export function StackingAgentCards() {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [visibleAgents]);
 
   return (
     <div className="flex flex-col" style={{ perspective: "1400px", perspectiveOrigin: "50% 0%" }}>
-      {AGENTS.map((agent, index) => {
+      {visibleAgents.map((agent, index) => {
         const currentDepth = depth[index];
         const scale = 1 - currentDepth * SCALE_STEP;
         const translateY = currentDepth * OFFSET_STEP;
@@ -178,7 +184,7 @@ export function StackingAgentCards() {
         );
       })}
 
-      <div className="h-[18vh] md:h-[22vh]" />
+      <div className="h-[10vh] md:h-[16vh]" />
     </div>
   );
 }

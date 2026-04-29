@@ -5,11 +5,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { AnimatedTetrahedron } from "./animated-tetrahedron";
+import { getDashboardLoginHref } from "@/lib/dashboard-url";
 
 export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const dashboardLoginHref = getDashboardLoginHref();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,9 +71,12 @@ export function CtaSection() {
                   <Button
                     size="lg"
                     className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+                    asChild
                   >
-                    Join early access
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    <Link href={dashboardLoginHref}>
+                      Join early access
+                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   </Button>
                   <Button
                     size="lg"
@@ -79,7 +84,7 @@ export function CtaSection() {
                     className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
                     asChild
                   >
-                    <Link href="/enter-app">Enter app</Link>
+                    <Link href={dashboardLoginHref}>Enter app</Link>
                   </Button>
                   <Button asChild size="lg" variant="ghost" className="h-14 px-6 text-base rounded-full hover:bg-foreground/5 group">
                     <Link href="/whitepaper">

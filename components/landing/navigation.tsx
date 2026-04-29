@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { getDashboardLoginHref } from "@/lib/dashboard-url";
 
 const navLinks = [
   { name: "Reality", href: "#problem" },
@@ -15,6 +16,7 @@ const navLinks = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dashboardLoginHref = getDashboardLoginHref();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,14 +67,15 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/enter-app" className={`text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}>
+            <Link href={dashboardLoginHref} className={`text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}>
               Enter app
             </Link>
             <Button
+              asChild
               size="sm"
               className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
             >
-              Request access
+              <Link href={dashboardLoginHref}>Request access</Link>
             </Button>
           </div>
 
@@ -130,15 +133,17 @@ export function Navigation() {
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
             <Button asChild variant="outline" className="flex-1 rounded-full h-14 text-base">
-              <Link href="/enter-app" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href={dashboardLoginHref} onClick={() => setIsMobileMenuOpen(false)}>
                 Enter app
               </Link>
             </Button>
-            <Button 
+            <Button
+              asChild
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Request access
+              <Link href={dashboardLoginHref} onClick={() => setIsMobileMenuOpen(false)}>
+                Request access
+              </Link>
             </Button>
           </div>
         </div>

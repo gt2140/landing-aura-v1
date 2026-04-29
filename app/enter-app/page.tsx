@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getDashboardLoginHref, hasDashboardUrl } from "@/lib/dashboard-url";
 
 const providers = [
   { label: "Mail", mark: "@" },
@@ -7,6 +9,10 @@ const providers = [
 ];
 
 export default function EnterAppPage() {
+  if (hasDashboardUrl()) {
+    redirect(getDashboardLoginHref());
+  }
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#f7f7f5] text-black">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),transparent_34%),linear-gradient(180deg,#fafaf8_0%,#f3f3ef_100%)]" />
