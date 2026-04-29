@@ -6,17 +6,17 @@ const problems = [
   {
     number: "01",
     title: "Signal without structure",
-    description: "Labs, wearables, notes, supplements, and protocols all exist, but they live in separate places. The full picture rarely stays coherent for long.",
+    description: "Labs, notes, supplements, and protocols exist, but they stay fragmented. The full picture rarely holds together.",
   },
   {
     number: "02",
     title: "Context disappears",
-    description: "Research, protocol notes, biomarker trends, and personal observations get rediscovered instead of reused. Each session starts with unnecessary reconstruction.",
+    description: "Research, notes, and biomarker trends get rediscovered instead of reused. Too much work starts from reconstruction.",
   },
   {
     number: "03",
     title: "No operating system for autonomy",
-    description: "People are becoming more capable and more proactive, but the software layer still lags behind. Nothing serious is built for disciplined, repeated, research-heavy health work.",
+    description: "Users are becoming more capable, but the software still lags behind. Nothing serious supports repeated, research-heavy health work.",
   },
 ];
 
@@ -183,7 +183,7 @@ export function ProblemSection() {
             <p className={`text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-100 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              A new class of user is emerging in health: more technical, more curious, more accountable, and far less passive. They order their own labs, track biomarkers, compare protocols, read papers, and make decisions with intent. The missing piece is software that can actually hold that complexity together.
+              A more technical, proactive health user has emerged. They run labs, track biomarkers, compare protocols, and read research. The missing piece is software that can hold that complexity together.
             </p>
           </div>
         </div>
@@ -214,7 +214,7 @@ export function ProblemSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
           <p className="text-2xl lg:text-3xl font-display leading-relaxed text-balance">
-            The people operating at the edge of health need a private intelligence layer built for complexity.
+            High-agency health users need a private intelligence layer built for complexity.
           </p>
         </div>
       </div>

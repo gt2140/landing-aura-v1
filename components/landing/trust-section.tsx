@@ -7,22 +7,22 @@ const trustPrinciples = [
   {
     icon: Shield,
     title: "Not mined",
-    description: "Your data is not used to train models. Not sold. Not shared. It exists only to serve you.",
+    description: "Your data is not sold, shared, or used to train models.",
   },
   {
     icon: Eye,
     title: "Not noisy",
-    description: "No wellness platitudes. No generic health tips. Aura is built for serious, repeated, context-heavy work.",
+    description: "No wellness fluff. No generic health advice.",
   },
   {
     icon: Database,
     title: "Not reset",
-    description: "Context persists. Every session builds on the last. Your health intelligence compounds over time.",
+    description: "Context persists so each session builds on the last.",
   },
   {
     icon: RefreshCw,
     title: "Not casual",
-    description: "This is not consumer wellness software. It is a system for people doing disciplined, research-heavy work.",
+    description: "Built for disciplined, research-heavy health work.",
   },
 ];
 
@@ -62,9 +62,7 @@ export function TrustSection() {
               a footnote.
             </h2>
             <p className="mb-10 max-w-[520px] text-lg leading-relaxed text-muted-foreground lg:text-[1.1rem]">
-              In Aura, trust is not a marketing claim. It is central to the product. 
-              The system is designed for people who take their health seriously and 
-              expect their tools to do the same.
+              Trust is built into the product. Aura is designed for people who expect serious tools for serious health work.
             </p>
 
             {/* Technical specs */}

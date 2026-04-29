@@ -130,7 +130,7 @@ export function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Aura helps users navigate labs, biomarkers, supplements, peptides, psychedelics, and research-heavy protocols with more context, continuity, and disciplined reasoning.
+          Aura helps users reason across labs, biomarkers, protocols, and research with memory, context, and continuity.
         </p>
         
         {/* CTAs - positioned below description on all screens */}

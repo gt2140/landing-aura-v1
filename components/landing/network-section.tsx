@@ -23,35 +23,23 @@ const steps = [
 const contributionTypes = [
   {
     title: "Agent improvements",
-    description: "Refining prompts, tools, and behaviors so agents become more accurate, useful, and reliable.",
+    description: "Improve prompts, tools, and agent behavior.",
   },
   {
     title: "Workflow design",
-    description: "Shaping better flows for how users move from question to reasoning to action.",
+    description: "Design better flows from question to action.",
   },
   {
     title: "Protocol validation",
-    description: "Stress-testing protocols against evidence, constraints, and real-world safety considerations.",
+    description: "Stress-test protocols against evidence and constraints.",
   },
   {
     title: "Research synthesis",
-    description: "Turning scattered papers and competing claims into structured, usable understanding.",
+    description: "Turn scattered papers into usable understanding.",
   },
   {
-    title: "Edge-case review",
-    description: "Catching brittle outputs, ambiguous cases, and failure modes before they compound.",
-  },
-  {
-    title: "Evaluation infrastructure",
-    description: "Building the scoring, testing, and review systems that keep quality measurable.",
-  },
-  {
-    title: "Specialist input",
-    description: "Adding domain-specific judgment where general systems are not enough on their own.",
-  },
-  {
-    title: "Structured health intelligence",
-    description: "Organizing observations, context, and longitudinal signal into something the system can reason with.",
+    title: "Evaluation systems",
+    description: "Build scoring, testing, and review infrastructure.",
   },
 ];
 
@@ -130,9 +118,9 @@ export function NetworkSection() {
         }`}>
           <h3 className="text-2xl lg:text-3xl font-display mb-6 text-center">What contribution looks like</h3>
           <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto leading-relaxed">
-            Contribution in Aura is not limited to code. The network should reward useful signal, not empty participation.
+            Aura rewards useful work, not empty participation.
           </p>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-x-12 gap-y-0 border-t border-foreground/10">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-12 gap-y-0 border-t border-foreground/10">
             {contributionTypes.map((type, index) => (
               <div
                 key={type.title}

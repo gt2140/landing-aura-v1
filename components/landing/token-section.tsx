@@ -79,20 +79,20 @@ export function TokenSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              A fixed-supply coordination layer for a private intelligence network in health.
+              A fixed-supply coordination layer for useful work in Aura.
             </p>
 
             <div className={`mt-10 max-w-3xl transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aura begins as a product-first system. The token is not the product. It is the long-term economic layer that aligns useful work across the network.
+                Aura starts as a product-first system. The token is not the product; it is the economic layer behind it.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                It is designed to reward contribution that improves the system: better agents, stronger evaluation, validated research, higher-quality protocol reasoning, more useful infrastructure for serious users.
+                It is designed to reward work that improves agents, evaluation, research, and infrastructure.
               </p>
               <p className="text-xl font-display mt-8 text-foreground">
-                The goal is not speculation. The goal is alignment.
+                The goal is alignment, not speculation.
               </p>
             </div>
           </div>

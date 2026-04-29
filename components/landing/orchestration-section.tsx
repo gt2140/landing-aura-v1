@@ -286,7 +286,7 @@ export function OrchestrationSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Aura is a system where specialized agents work across the same Vault and produce better decisions than a generic interface.
+            Aura routes questions to specialized agents working across the same Vault.
           </p>
         </div>
 
@@ -301,13 +301,13 @@ export function OrchestrationSection() {
                 Serious health workflows are rarely one-dimensional.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                A peptide question may depend on bloodwork, nutrition, recovery, prior protocols, research, and Vault context.
+                A peptide decision may depend on bloodwork, recovery, nutrition, prior protocols, and research.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aura routes those decisions to the right agents and keeps the reasoning connected.
+                Aura routes those questions to the right agents and keeps the reasoning connected.
               </p>
               <p className="text-xl font-display text-foreground">
-                The result is not just an answer. It is coordinated intelligence with memory.
+                The result is coordinated intelligence with memory.
               </p>
             </div>
 
@@ -315,7 +315,7 @@ export function OrchestrationSection() {
             <p className={`mt-10 text-muted-foreground/60 text-sm leading-relaxed transition-all duration-700 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              The point is not just answering faster. The point is reasoning with better boundaries, better memory, and better follow-through.
+              Better boundaries, better memory, and better follow-through.
             </p>
 
             {/* CTAs */}

@@ -7,22 +7,22 @@ const vaultFeatures = [
   {
     icon: Lock,
     title: "Private by default",
-    description: "End-to-end encrypted. Your health data remains yours. No selling, no silent training, no hidden sharing.",
+    description: "End-to-end encrypted. Your health data stays yours.",
   },
   {
     icon: Layers,
     title: "Structured context",
-    description: "Labs, biomarkers, protocols, notes, papers, supplements, peptides, and related observations organized into reusable context.",
+    description: "Labs, notes, protocols, and research organized into reusable context.",
   },
   {
     icon: History,
     title: "Longitudinal memory",
-    description: "The system remembers prior sessions, previous reasoning, and changing signals over time so decisions can build instead of reset.",
+    description: "Prior sessions and changing signals stay connected so decisions build instead of reset.",
   },
   {
     icon: Key,
     title: "Scoped access",
-    description: "Different agents reason over different slices of the Vault, so outputs stay specialized, relevant, and disciplined.",
+    description: "Different agents reason over the right slices of the Vault, so outputs stay focused and disciplined.",
   },
 ];
 
@@ -125,7 +125,7 @@ export function VaultSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            The Vault is where labs, biomarkers, protocol notes, supplements, research, and longitudinal observations become structured context instead of scattered history.
+            The Vault turns labs, notes, protocols, and research into structured health memory.
           </p>
         </div>
 
@@ -169,10 +169,10 @@ export function VaultSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
           <p className="text-background/70 text-lg max-w-2xl leading-relaxed">
-            The Vault is not a feature added to the product. It is the foundation that allows Aura to function as a serious private intelligence system.
+            The Vault is the foundation that makes Aura useful over time.
           </p>
           <p className="text-background/40 text-sm font-mono mt-6 max-w-xl">
-            Especially for users working across supplements, peptides, enhancement, psychedelics, and research-heavy protocols, memory and structure are not optional. They are the whole point.
+            For serious health workflows, memory and structure are not optional.
           </p>
         </div>
       </div>
