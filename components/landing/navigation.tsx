@@ -11,6 +11,9 @@ const navLinks = [
   { name: "Vault", href: "#vault" },
   { name: "Agents", href: "#agents" },
   { name: "Network", href: "#network" },
+  { name: "Token", href: "#token" },
+  { name: "Plans", href: "#pricing" },
+  { name: "Collaborate", href: "#early-access" },
 ];
 
 export function Navigation() {

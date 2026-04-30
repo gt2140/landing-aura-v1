@@ -1,13 +1,14 @@
+const DEFAULT_DASHBOARD_URL = "https://app-eta-rosy-34.vercel.app";
 const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL?.trim();
 
-export function getDashboardLoginHref() {
-  if (!DASHBOARD_URL) {
-    return "/enter-app";
-  }
+function getDashboardBaseUrl() {
+  return DASHBOARD_URL || DEFAULT_DASHBOARD_URL;
+}
 
-  return new URL("/login", DASHBOARD_URL).toString();
+export function getDashboardLoginHref() {
+  return new URL("/login", getDashboardBaseUrl()).toString();
 }
 
 export function hasDashboardUrl() {
-  return Boolean(DASHBOARD_URL);
+  return Boolean(getDashboardBaseUrl());
 }

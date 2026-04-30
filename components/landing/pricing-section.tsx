@@ -49,7 +49,7 @@ const plans = [
       "Operational and enterprise agreements",
     ],
     cta: "Talk to us",
-    href: "#access",
+    href: "#early-access",
     popular: false,
   },
 ];
