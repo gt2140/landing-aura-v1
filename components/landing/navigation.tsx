@@ -137,23 +137,33 @@ export function Navigation() {
         }`}
         style={{ top: 0 }}
       >
-        <div className="flex flex-col h-full px-8 pt-28 pb-8">
+        <div className="flex flex-col h-full px-6 pt-6 pb-8 sm:px-8">
+          <div className="mb-6 flex items-center justify-between">
+            <span className="font-display text-xl tracking-tight">AURA</span>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/10 bg-background text-foreground transition-colors hover:bg-foreground/5"
+              aria-label="Close menu"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
           {/* Navigation Links */}
-          <div className="flex-1 flex flex-col justify-center gap-5">
+          <div className="flex-1 flex flex-col justify-start gap-4 pt-2">
             {navLinks.map((link, i) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={handleNavClick(link.href)}
-                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
+                className={`font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-4"
                 }`}
                 style={{
                   transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms",
-                  fontSize: "clamp(2rem, 9vw, 3.25rem)",
-                  lineHeight: "1",
+                  fontSize: "clamp(1.8rem, 8vw, 3rem)",
+                  lineHeight: "0.98",
                 }}
               >
                 {link.name}
@@ -162,21 +172,21 @@ export function Navigation() {
           </div>
           
           {/* Bottom CTAs */}
-          <div className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${
+          <div className={`grid grid-cols-1 gap-3 pt-6 border-t border-foreground/10 transition-all duration-500 sm:grid-cols-2 ${
             isMobileMenuOpen 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
-            <Button asChild variant="outline" className="flex-1 rounded-full h-14 text-base">
+            <Button asChild variant="outline" className="w-full rounded-full h-12 text-sm sm:h-14 sm:text-base">
               <Link href={dashboardLoginHref} onClick={() => setIsMobileMenuOpen(false)}>
                 Enter app
               </Link>
             </Button>
             <Button
               asChild
-              className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
+              className="w-full bg-foreground text-background rounded-full h-12 text-sm sm:h-14 sm:text-base"
             >
               <Link href={dashboardLoginHref} onClick={() => setIsMobileMenuOpen(false)}>
                 Enter App

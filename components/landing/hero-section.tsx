@@ -56,7 +56,7 @@ export function HeroSection() {
   }, [displayText, isDeleting, titleIndex]);
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden md:min-h-screen">
+    <section className="relative flex min-h-[100svh] flex-col justify-start overflow-hidden pt-24 md:min-h-screen md:justify-center md:pt-0">
       {/* Animated sphere background */}
       <div className="pointer-events-none absolute right-[-30%] top-[18%] h-[320px] w-[320px] opacity-25 sm:right-[-18%] sm:top-1/2 sm:h-[460px] sm:w-[460px] sm:-translate-y-1/2 sm:opacity-35 lg:right-0 lg:h-[800px] lg:w-[800px] lg:opacity-40">
         <AnimatedSphere />
@@ -88,7 +88,7 @@ export function HeroSection() {
         ))}
       </div>
       
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-24 sm:py-28 lg:px-12 lg:py-40">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-12 sm:py-20 lg:px-12 lg:py-40">
         {/* Eyebrow */}
         <div 
           className={`mb-8 transition-all duration-700 ${
@@ -102,9 +102,9 @@ export function HeroSection() {
         </div>
         
         {/* Main headline */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <h1 
-            className={`text-[clamp(2.2rem,11vw,6rem)] font-display leading-[0.92] tracking-tight transition-all duration-1000 sm:text-[clamp(2.5rem,8vw,6rem)] ${
+            className={`max-w-[11ch] text-[clamp(2rem,10vw,6rem)] font-display leading-[0.92] tracking-tight transition-all duration-1000 sm:max-w-none sm:text-[clamp(2.5rem,8vw,6rem)] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -128,7 +128,7 @@ export function HeroSection() {
         
         {/* Description */}
         <p 
-          className={`max-w-xl text-base leading-relaxed text-muted-foreground sm:max-w-2xl sm:text-lg lg:text-2xl transition-all duration-700 delay-200 ${
+          className={`max-w-[22rem] text-[15px] leading-relaxed text-muted-foreground sm:max-w-2xl sm:text-lg lg:text-2xl transition-all duration-700 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -137,21 +137,21 @@ export function HeroSection() {
         
         {/* CTAs - positioned below description on all screens */}
         <div 
-          className={`mt-10 flex flex-col items-stretch gap-3 sm:mt-12 sm:flex-row sm:items-start sm:gap-4 lg:mt-16 transition-all duration-700 delay-300 ${
+          className={`mt-8 flex flex-col items-stretch gap-3 sm:mt-12 sm:flex-row sm:items-start sm:gap-4 lg:mt-16 transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
           <Button
             asChild
             size="lg"
-            className="w-full sm:w-auto bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+            className="w-full sm:w-auto bg-foreground hover:bg-foreground/90 text-background px-6 h-12 text-sm rounded-full group sm:px-8 sm:h-14 sm:text-base"
           >
             <Link href={dashboardLoginHref}>
               Enter App
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5">
+          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm rounded-full border-foreground/20 hover:bg-foreground/5 sm:h-14 sm:px-8 sm:text-base">
             <Link href="/whitepaper">Read Whitepaper</Link>
           </Button>
          </div>
@@ -159,7 +159,7 @@ export function HeroSection() {
 
       {/* Stats - conceptual, not marketing */}
       <div 
-        className={`relative mt-10 px-6 sm:mt-14 lg:px-0 lg:absolute lg:bottom-24 lg:left-0 lg:right-0 transition-all duration-700 delay-500 ${
+        className={`relative mt-8 px-6 sm:mt-14 lg:px-0 lg:absolute lg:bottom-24 lg:left-0 lg:right-0 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
