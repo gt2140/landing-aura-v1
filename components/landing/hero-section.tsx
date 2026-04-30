@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
+import { getDashboardLoginHref } from "@/lib/dashboard-url";
 
 const rotatingTitles = [
   "health workflows",
@@ -21,6 +22,7 @@ export function HeroSection() {
   const [titleIndex, setTitleIndex] = useState(0);
   const [displayText, setDisplayText] = useState(rotatingTitles[0]);
   const [isDeleting, setIsDeleting] = useState(false);
+  const dashboardLoginHref = getDashboardLoginHref();
 
   useEffect(() => {
     setIsVisible(true);
@@ -139,12 +141,15 @@ export function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <Button 
-            size="lg" 
+          <Button
+            asChild
+            size="lg"
             className="w-full sm:w-auto bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
           >
-            Request early access
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            <Link href={dashboardLoginHref}>
+              Enter App
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5">
             <Link href="/whitepaper">Read Whitepaper</Link>
