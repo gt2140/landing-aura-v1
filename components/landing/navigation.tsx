@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import type { MouseEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { getDashboardLoginHref } from "@/lib/dashboard-url";
+import { getInPageTarget } from "@/lib/navigation";
 
 const navLinks = [
   { name: "Reality", href: "#problem" },
@@ -28,6 +30,33 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!window.location.hash) {
+      return;
+    }
+
+    window.history.replaceState({}, "", window.location.pathname);
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
+
+  const handleNavClick = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    const sectionId = getInPageTarget(href);
+    if (!sectionId) {
+      return;
+    }
+
+    event.preventDefault();
+    setIsMobileMenuOpen(false);
+
+    const element = document.getElementById(sectionId);
+    if (!element) {
+      return;
+    }
+
+    window.history.replaceState({}, "", window.location.pathname);
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <header
@@ -55,11 +84,12 @@ export function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
+                onClick={handleNavClick(link.href)}
                 className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
               >
                 {link.name}
@@ -78,7 +108,7 @@ export function Navigation() {
               size="sm"
               className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
             >
-              <Link href={dashboardLoginHref}>Request access</Link>
+              <Link href={dashboardLoginHref}>Enter App</Link>
             </Button>
           </div>
 
@@ -109,18 +139,22 @@ export function Navigation() {
       >
         <div className="flex flex-col h-full px-8 pt-28 pb-8">
           {/* Navigation Links */}
-          <div className="flex-1 flex flex-col justify-center gap-8">
+          <div className="flex-1 flex flex-col justify-center gap-5">
             {navLinks.map((link, i) => (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={handleNavClick(link.href)}
                 className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-4"
                 }`}
-                style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
+                style={{
+                  transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms",
+                  fontSize: "clamp(2rem, 9vw, 3.25rem)",
+                  lineHeight: "1",
+                }}
               >
                 {link.name}
               </a>
@@ -145,7 +179,7 @@ export function Navigation() {
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
             >
               <Link href={dashboardLoginHref} onClick={() => setIsMobileMenuOpen(false)}>
-                Request access
+                Enter App
               </Link>
             </Button>
           </div>
