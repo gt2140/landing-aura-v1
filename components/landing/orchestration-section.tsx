@@ -166,7 +166,7 @@ function ChatDemo() {
   }, [isInView, sequenceDurations]);
 
   return (
-    <div ref={demoRef} className="bg-background/5 border border-foreground/10 rounded-lg p-6 font-mono text-sm">
+    <div ref={demoRef} className="flex min-h-[520px] flex-col rounded-lg border border-foreground/10 bg-background/5 p-5 font-mono text-sm sm:p-6 lg:min-h-[560px]">
       {/* Header */}
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-foreground/10">
         <div className="w-3 h-3 rounded-full bg-foreground/20" />
@@ -176,7 +176,7 @@ function ChatDemo() {
       </div>
       
       {/* Chat messages */}
-      <div className="min-h-[26rem] space-y-4 sm:min-h-[24rem]">
+      <div className="flex-1 space-y-4">
         {chatSequence.map((item, index) => {
           const isVisible = index <= activeIndex;
           const isActive = index === activeIndex;
@@ -226,7 +226,7 @@ function ChatDemo() {
       </div>
       
       {/* Caption */}
-      <div className="mt-6 pt-4 border-t border-foreground/10">
+      <div className="mt-6 border-t border-foreground/10 pt-4">
         <p className="text-xs text-muted-foreground/50">A peptide question becomes more useful when cross-checked against bloodwork, nutrition, and prior context from the Vault.</p>
       </div>
     </div>
@@ -265,7 +265,7 @@ export function OrchestrationSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-12 max-w-4xl lg:mb-16">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
             How Aura Works
@@ -291,9 +291,9 @@ export function OrchestrationSection() {
         </div>
 
         {/* Main content grid */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
           {/* Left: Explanation */}
-          <div>
+          <div className="lg:max-w-[520px]">
             <div className={`mb-12 transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
@@ -335,7 +335,7 @@ export function OrchestrationSection() {
           </div>
 
           {/* Right: Chat demo */}
-          <div className={`transition-all duration-700 delay-400 ${
+          <div className={`w-full lg:justify-self-end transition-all duration-700 delay-400 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <ChatDemo />

@@ -158,7 +158,7 @@ export function LiveAgentFeed() {
   }, []);
 
   return (
-    <div className="overflow-hidden rounded-[22px] border border-black/[0.08] bg-white/70 shadow-[0_10px_40px_rgba(0,0,0,0.04)] backdrop-blur-md">
+    <div className="overflow-hidden rounded-[22px] border border-black/[0.08] bg-white/70 shadow-[0_10px_40px_rgba(0,0,0,0.04)] backdrop-blur-md lg:min-h-[520px]">
       <div className="grid grid-cols-[92px_minmax(0,1fr)_72px_68px] border-b border-black/[0.06] bg-black/[0.03] px-4 py-3 md:grid-cols-[104px_minmax(0,1fr)_88px_80px] md:px-6">
         {["AGENT", "TASK", "REGION", "STATUS"].map((heading) => (
           <span key={heading} className="text-[9px] tracking-[0.24em] text-black/30">
@@ -171,7 +171,7 @@ export function LiveAgentFeed() {
         {rows.map((row, index) => (
           <div
             key={row.key}
-            className="grid grid-cols-[92px_minmax(0,1fr)_72px_68px] items-center gap-2 border-b border-black/[0.04] px-4 py-4 last:border-b-0 md:grid-cols-[104px_minmax(0,1fr)_88px_80px] md:px-6"
+            className="grid min-h-[72px] grid-cols-[92px_minmax(0,1fr)_72px_68px] items-center gap-2 border-b border-black/[0.04] px-4 py-4 last:border-b-0 md:grid-cols-[104px_minmax(0,1fr)_88px_80px] md:px-6"
             style={{
               animation: index === rows.length - 1 ? "rowSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) both" : "none",
             }}

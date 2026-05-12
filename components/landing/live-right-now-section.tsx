@@ -13,9 +13,9 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 export function LiveRightNowSection() {
   return (
-    <section id="live" className="border-t border-black/[0.06] px-6 py-20 md:px-10 lg:px-16 lg:py-24">
-      <div className="mx-auto max-w-[1160px]">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
+    <section id="live" className="border-t border-black/[0.06] px-6 py-20 md:px-10 lg:px-16 lg:py-28">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
           <div className="max-w-[460px]">
             <PixelIcon type="agents" size={40} />
             <div className="mt-5">
@@ -38,7 +38,7 @@ export function LiveRightNowSection() {
             </div>
           </div>
 
-          <div className="max-w-[560px] lg:max-w-none lg:self-stretch">
+          <div className="w-full lg:justify-self-end">
             <LiveAgentFeed />
           </div>
         </div>
