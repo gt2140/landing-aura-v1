@@ -13,26 +13,26 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 export function LiveRightNowSection() {
   return (
-    <section id="live" className="border-t border-black/[0.06] px-6 py-20 md:px-10 lg:px-16 lg:py-28">
+    <section id="live" className="border-t border-black/[0.06] px-6 py-16 md:px-10 lg:px-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
-        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-14">
           <div className="max-w-[460px]">
             <PixelIcon type="agents" size={40} />
             <div className="mt-5">
               <Tag>LIVE RIGHT NOW</Tag>
             </div>
-            <h2 className="mt-7 text-[clamp(2.45rem,5vw,4.15rem)] leading-[0.98] tracking-[-0.05em] text-black/92">
+            <h2 className="mt-6 text-[clamp(2.1rem,4vw,3.35rem)] leading-[1] tracking-tight text-black/92">
               Health intelligence
               <br />
               24 / 7,
               <br />
               in motion.
             </h2>
-            <p className="mt-6 max-w-sm text-base leading-relaxed text-black/45 lg:text-[1rem]">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-black/45 lg:text-[0.98rem]">
               At any moment, Aura keeps labs, biomarkers, protocol notes, supplements, and research context connected
               with memory carried forward.
             </p>
-            <div className="mt-9 flex items-end gap-3">
+            <div className="mt-7 flex items-end gap-3">
               <LiveAgentCounter />
               <span className="mb-2 text-sm tracking-wide text-black/30">intelligence runs active globally</span>
             </div>

@@ -89,7 +89,7 @@ export function VaultSection() {
     <section
       id="vault"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-foreground text-background overflow-hidden"
+      className="relative overflow-hidden bg-foreground py-16 text-background lg:py-24"
     >
       {/* Subtle pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
@@ -106,13 +106,13 @@ export function VaultSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-16 lg:mb-24">
+        <div className="mb-12 lg:mb-16">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
             <span className="w-8 h-px bg-background/30" />
             The Vault
           </span>
           <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 max-w-4xl ${
+            className={`max-w-4xl text-3xl font-display tracking-tight transition-all duration-700 sm:text-4xl lg:text-5xl ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -121,7 +121,7 @@ export function VaultSection() {
             <span className="text-background/50">Actually usable over time.</span>
           </h2>
           <p
-            className={`mt-8 text-xl text-background/60 leading-relaxed max-w-2xl transition-all duration-700 delay-100 ${
+            className={`mt-6 max-w-2xl text-lg leading-relaxed text-background/60 transition-all duration-700 delay-100 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -130,7 +130,7 @@ export function VaultSection() {
         </div>
 
         {/* Content grid */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Visual */}
           <div className={`flex items-center justify-center text-background transition-all duration-700 delay-200 ${
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -165,7 +165,7 @@ export function VaultSection() {
         </div>
 
         {/* Bottom note */}
-        <div className={`mt-20 pt-12 border-t border-background/10 transition-all duration-700 delay-500 ${
+        <div className={`mt-14 border-t border-background/10 pt-10 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
           <p className="text-background/70 text-lg max-w-2xl leading-relaxed">

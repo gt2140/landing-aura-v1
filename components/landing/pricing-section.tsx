@@ -56,13 +56,13 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="relative border-t border-foreground/10 py-20 lg:py-24">
+    <section id="pricing" className="relative border-t border-foreground/10 py-16 lg:py-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="max-w-3xl mb-14 lg:mb-16">
+        <div className="mb-12 max-w-3xl lg:mb-14">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-5">
             Access Plans
           </span>
-          <h2 className="font-display text-4xl md:text-6xl tracking-tight text-foreground mb-6 leading-[0.96]">
+          <h2 className="mb-5 font-display text-3xl leading-[0.98] tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Choose the layer
             <br />
             <span className="text-muted-foreground">that fits your workflow.</span>
@@ -97,7 +97,7 @@ export function PricingSection() {
 
               <div className="mb-6 border-b border-foreground/10 pb-6">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-4xl tracking-tight text-foreground lg:text-5xl">
+                  <span className="font-display text-3xl tracking-tight text-foreground lg:text-4xl">
                     {plan.priceLabel}
                   </span>
                   {"priceSuffix" in plan && plan.priceSuffix ? (

@@ -166,9 +166,9 @@ function ChatDemo() {
   }, [isInView, sequenceDurations]);
 
   return (
-    <div ref={demoRef} className="flex min-h-[520px] flex-col rounded-lg border border-foreground/10 bg-background/5 p-5 font-mono text-sm sm:p-6 lg:min-h-[560px]">
+    <div ref={demoRef} className="flex min-h-[420px] flex-col rounded-lg border border-foreground/10 bg-background/5 p-5 font-mono text-sm sm:min-h-[450px] sm:p-6">
       {/* Header */}
-      <div className="flex items-center gap-2 mb-6 pb-4 border-b border-foreground/10">
+      <div className="mb-5 flex items-center gap-2 border-b border-foreground/10 pb-4">
         <div className="w-3 h-3 rounded-full bg-foreground/20" />
         <div className="w-3 h-3 rounded-full bg-foreground/20" />
         <div className="w-3 h-3 rounded-full bg-foreground/20" />
@@ -176,7 +176,7 @@ function ChatDemo() {
       </div>
       
       {/* Chat messages */}
-      <div className="flex-1 space-y-4">
+      <div className="flex-1 space-y-3.5">
         {chatSequence.map((item, index) => {
           const isVisible = index <= activeIndex;
           const isActive = index === activeIndex;
@@ -253,7 +253,7 @@ export function OrchestrationSection() {
     <section
       id="orchestration"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative overflow-hidden py-16 lg:py-24"
     >
       {/* Subtle background */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
@@ -263,79 +263,75 @@ export function OrchestrationSection() {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div className="mb-12 max-w-4xl lg:mb-16">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-            <span className="w-8 h-px bg-foreground/30" />
-            How Aura Works
-          </span>
-          
-          <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 max-w-4xl ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            Orchestration
-            <br />
-            <span className="text-muted-foreground">Collaborate, build, and reason across health intelligence.</span>
-          </h2>
-          
-          <p
-            className={`mt-8 text-xl text-muted-foreground leading-relaxed max-w-2xl transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            Aura coordinates complex health questions across the same private Vault.
-          </p>
-        </div>
-
-        {/* Main content grid */}
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+      <div className="relative z-10 mx-auto max-w-[1180px] px-6 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start lg:gap-14">
           {/* Left: Explanation */}
-          <div className="lg:max-w-[520px]">
-            <div className={`mb-12 transition-all duration-700 delay-200 ${
+          <div className="lg:max-w-[500px]">
+            <span className="mb-5 inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
+              <span className="h-px w-8 bg-foreground/30" />
+              How Aura Works
+            </span>
+
+            <h2
+              className={`max-w-xl text-3xl font-display tracking-tight transition-all duration-700 sm:text-4xl lg:text-5xl ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Orchestration
+              <br />
+              <span className="text-muted-foreground">Reason across health intelligence.</span>
+            </h2>
+
+            <p
+              className={`mt-5 max-w-md text-base leading-relaxed text-muted-foreground transition-all duration-700 delay-100 lg:text-lg ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Aura coordinates complex health questions across the same private Vault.
+            </p>
+
+            <div className={`mt-8 mb-8 transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
                 Serious health workflows are rarely one-dimensional.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
                 A peptide decision may depend on bloodwork, recovery, nutrition, prior protocols, and research.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
                 Aura routes those questions through the right context and keeps the reasoning connected.
               </p>
-              <p className="text-xl font-display text-foreground">
+              <p className="text-lg font-display text-foreground">
                 The result is coordinated intelligence with memory.
               </p>
             </div>
 
             {/* Support line */}
-            <p className={`mt-10 text-muted-foreground/60 text-sm leading-relaxed transition-all duration-700 delay-500 ${
+            <p className={`text-sm leading-relaxed text-muted-foreground/60 transition-all duration-700 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
               Better boundaries, better memory, and better follow-through.
             </p>
 
             {/* CTAs */}
-            <div className={`mt-8 flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-600 ${
+            <div className={`mt-7 flex flex-col gap-3 transition-all duration-700 delay-600 sm:flex-row ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              <Button asChild size="lg" variant="outline" className="h-12 px-6 text-sm rounded-full border-foreground/20 hover:bg-foreground/5">
+              <Button asChild size="lg" variant="outline" className="h-11 rounded-full border-foreground/20 px-5 text-sm hover:bg-foreground/5">
                 <Link href="/whitepaper">
                   Read Whitepaper
                   <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="ghost" className="h-12 px-6 text-sm rounded-full hover:bg-foreground/5">
+              <Button asChild size="lg" variant="ghost" className="h-11 rounded-full px-5 text-sm hover:bg-foreground/5">
                 <Link href="/manifesto">Read Manifesto</Link>
               </Button>
             </div>
           </div>
 
           {/* Right: Chat demo */}
-          <div className={`w-full lg:justify-self-end transition-all duration-700 delay-400 ${
+          <div className={`w-full transition-all duration-700 delay-400 lg:justify-self-end ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <ChatDemo />

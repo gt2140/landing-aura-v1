@@ -63,7 +63,7 @@ export function NetworkSection() {
     <section
       id="network"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-muted/30 overflow-hidden"
+      className="relative overflow-hidden bg-muted/30 py-16 lg:py-24"
     >
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-24 text-center">
@@ -73,7 +73,7 @@ export function NetworkSection() {
             <span className="w-8 h-px bg-foreground/30" />
           </span>
           <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
+            className={`text-3xl font-display tracking-tight transition-all duration-700 sm:text-4xl lg:text-5xl ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >

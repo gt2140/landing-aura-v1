@@ -34,7 +34,7 @@ export function CtaSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative overflow-hidden py-16 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
           className={`relative border border-foreground transition-all duration-1000 ${
@@ -50,11 +50,11 @@ export function CtaSection() {
             }}
           />
           
-          <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
+        <div className="relative z-10 px-8 py-12 lg:px-16 lg:py-16">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               {/* Left content */}
               <div className="flex-1">
-                <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8 leading-[0.95]">
+          <h2 className="mb-6 text-3xl font-display leading-[0.98] tracking-tight sm:text-4xl lg:text-5xl">
                   Own your context.
                   <br />
                   <span className="text-muted-foreground">Reason with continuity.</span>

@@ -51,7 +51,7 @@ export function EarlyAccessSection() {
   }, []);
 
   return (
-    <section id="early-access" ref={sectionRef} className="relative py-24 lg:py-32">
+    <section id="early-access" ref={sectionRef} className="relative py-16 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
@@ -64,7 +64,7 @@ export function EarlyAccessSection() {
               <span className="w-8 h-px bg-foreground/30" />
               Early Access
             </span>
-            <h2 className="text-4xl lg:text-5xl font-display tracking-tight mb-8">
+            <h2 className="mb-6 text-3xl font-display tracking-tight sm:text-4xl lg:text-5xl">
               Built with
               <br />
               serious collaborators.

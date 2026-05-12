@@ -43,7 +43,7 @@ export function TrustSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-foreground/[0.02] py-20 lg:py-24">
+    <section ref={sectionRef} className="relative overflow-hidden bg-foreground/[0.02] py-16 lg:py-20">
       <div className="mx-auto max-w-[1240px] px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,0.9fr)] lg:gap-16">
           {/* Left: Content */}
@@ -56,12 +56,12 @@ export function TrustSection() {
               <span className="w-8 h-px bg-foreground/30" />
               Trust
             </span>
-            <h2 className="mb-6 text-4xl font-display tracking-tight lg:text-[4.4rem]">
+            <h2 className="mb-5 text-3xl font-display tracking-tight sm:text-4xl lg:text-[3.6rem]">
               Trust is not
               <br />
               a footnote.
             </h2>
-            <p className="mb-10 max-w-[520px] text-lg leading-relaxed text-muted-foreground lg:text-[1.1rem]">
+            <p className="mb-8 max-w-[520px] text-base leading-relaxed text-muted-foreground lg:text-[1.02rem]">
               Trust is built into the product. Aura is designed for people who expect serious tools for serious health work.
             </p>
 

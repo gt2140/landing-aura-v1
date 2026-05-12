@@ -48,7 +48,7 @@ export function TokenSection() {
     <section
       id="token"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative overflow-hidden py-16 lg:py-24"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
@@ -67,7 +67,7 @@ export function TokenSection() {
             </span>
             
             <h2
-              className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 max-w-3xl ${
+            className={`max-w-3xl text-3xl font-display tracking-tight transition-all duration-700 sm:text-4xl lg:text-5xl ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
