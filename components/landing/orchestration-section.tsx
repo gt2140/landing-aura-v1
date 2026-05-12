@@ -329,7 +329,7 @@ export function OrchestrationSection() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="ghost" className="h-12 px-6 text-sm rounded-full hover:bg-foreground/5">
-                <a href="#manifesto">Read Manifesto</a>
+                <Link href="/manifesto">Read Manifesto</Link>
               </Button>
             </div>
           </div>

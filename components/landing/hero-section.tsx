@@ -155,7 +155,7 @@ export function HeroSection() {
             <Link href="/whitepaper">Read Whitepaper</Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm rounded-full border-foreground/20 hover:bg-foreground/5 sm:h-14 sm:px-8 sm:text-base">
-            <a href="#manifesto">Read Manifesto</a>
+            <Link href="/manifesto">Read Manifesto</Link>
           </Button>
          </div>
        </div>

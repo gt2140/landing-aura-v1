@@ -9,7 +9,6 @@ import { getDashboardLoginHref } from "@/lib/dashboard-url";
 import { getInPageTarget } from "@/lib/navigation";
 
 const navLinks = [
-  { name: "Manifesto", href: "#manifesto" },
   { name: "Vault", href: "#vault" },
   { name: "Network", href: "#network" },
   { name: "Token", href: "#token" },
@@ -84,6 +83,13 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
+            <Link
+              href="/manifesto"
+              className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+            >
+              Manifesto
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
+            </Link>
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -149,6 +155,22 @@ export function Navigation() {
           </div>
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-start gap-4 pt-2">
+            <Link
+              href="/manifesto"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
+                isMobileMenuOpen 
+                  ? "opacity-100 translate-y-0" 
+                  : "opacity-0 translate-y-4"
+              }`}
+              style={{
+                transitionDelay: isMobileMenuOpen ? "0ms" : "0ms",
+                fontSize: "clamp(1.8rem, 8vw, 3rem)",
+                lineHeight: "0.98",
+              }}
+            >
+              Manifesto
+            </Link>
             {navLinks.map((link, i) => (
               <a
                 key={link.name}
@@ -160,7 +182,7 @@ export function Navigation() {
                     : "opacity-0 translate-y-4"
                 }`}
                 style={{
-                  transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms",
+                  transitionDelay: isMobileMenuOpen ? `${(i + 1) * 75}ms` : "0ms",
                   fontSize: "clamp(1.8rem, 8vw, 3rem)",
                   lineHeight: "0.98",
                 }}

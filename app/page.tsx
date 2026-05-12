@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
-import { ManifestoSection } from "@/components/landing/manifesto-section";
 import { VaultSection } from "@/components/landing/vault-section";
 import { OrchestrationSection } from "@/components/landing/orchestration-section";
 import { TrustSection } from "@/components/landing/trust-section";
@@ -18,7 +17,6 @@ export default function Home() {
     <main className="relative min-h-screen overflow-x-hidden noise-overlay">
       <Navigation />
       <HeroSection />
-      <ManifestoSection />
       <VaultSection />
       <OrchestrationSection />
       <LiveRightNowSection />
