@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 const footerLinks = {
   Product: [
     { name: "Vault", href: "#vault" },
-    { name: "Agents", href: "#agents" },
+    { name: "Manifesto", href: "#manifesto" },
     { name: "Early Access", href: "#early-access" },
   ],
   Resources: [

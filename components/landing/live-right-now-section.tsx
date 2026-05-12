@@ -22,19 +22,19 @@ export function LiveRightNowSection() {
               <Tag>LIVE RIGHT NOW</Tag>
             </div>
             <h2 className="mt-7 text-[clamp(2.45rem,5vw,4.15rem)] leading-[0.98] tracking-[-0.05em] text-black/92">
-              Agents working
+              Health intelligence
               <br />
               24 / 7,
               <br />
-              autonomously.
+              in motion.
             </h2>
             <p className="mt-6 max-w-sm text-base leading-relaxed text-black/45 lg:text-[1rem]">
-              At any moment, specialized Aura agents are running across labs, biomarkers, protocol notes, supplements,
-              and research context with memory carried forward.
+              At any moment, Aura keeps labs, biomarkers, protocol notes, supplements, and research context connected
+              with memory carried forward.
             </p>
             <div className="mt-9 flex items-end gap-3">
               <LiveAgentCounter />
-              <span className="mb-2 text-sm tracking-wide text-black/30">agents active globally</span>
+              <span className="mb-2 text-sm tracking-wide text-black/30">intelligence runs active globally</span>
             </div>
           </div>
 

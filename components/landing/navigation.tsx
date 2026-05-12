@@ -9,9 +9,8 @@ import { getDashboardLoginHref } from "@/lib/dashboard-url";
 import { getInPageTarget } from "@/lib/navigation";
 
 const navLinks = [
-  { name: "Reality", href: "#problem" },
+  { name: "Manifesto", href: "#manifesto" },
   { name: "Vault", href: "#vault" },
-  { name: "Agents", href: "#agents" },
   { name: "Network", href: "#network" },
   { name: "Token", href: "#token" },
   { name: "Plans", href: "#pricing" },

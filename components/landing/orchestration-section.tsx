@@ -286,7 +286,7 @@ export function OrchestrationSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Aura routes questions to specialized agents working across the same Vault.
+            Aura coordinates complex health questions across the same private Vault.
           </p>
         </div>
 
@@ -304,7 +304,7 @@ export function OrchestrationSection() {
                 A peptide decision may depend on bloodwork, recovery, nutrition, prior protocols, and research.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aura routes those questions to the right agents and keeps the reasoning connected.
+                Aura routes those questions through the right context and keeps the reasoning connected.
               </p>
               <p className="text-xl font-display text-foreground">
                 The result is coordinated intelligence with memory.
@@ -328,12 +328,8 @@ export function OrchestrationSection() {
                   <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="ghost" 
-                className="h-12 px-6 text-sm rounded-full hover:bg-foreground/5"
-              >
-                Explore Agents
+              <Button asChild size="lg" variant="ghost" className="h-12 px-6 text-sm rounded-full hover:bg-foreground/5">
+                <a href="#manifesto">Read Manifesto</a>
               </Button>
             </div>
           </div>

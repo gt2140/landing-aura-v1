@@ -154,6 +154,9 @@ export function HeroSection() {
           <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm rounded-full border-foreground/20 hover:bg-foreground/5 sm:h-14 sm:px-8 sm:text-base">
             <Link href="/whitepaper">Read Whitepaper</Link>
           </Button>
+          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm rounded-full border-foreground/20 hover:bg-foreground/5 sm:h-14 sm:px-8 sm:text-base">
+            <a href="#manifesto">Read Manifesto</a>
+          </Button>
          </div>
        </div>
 
@@ -166,8 +169,8 @@ export function HeroSection() {
         <div className="max-w-[1400px] mx-auto lg:px-12">
           <div className="flex flex-wrap gap-x-6 gap-y-4 sm:gap-x-10 lg:gap-24">
             <div className="flex items-baseline gap-3">
-              <span className="text-2xl font-display sm:text-3xl lg:text-4xl">6</span>
-              <span className="text-sm text-muted-foreground">Specialized agents</span>
+              <span className="text-2xl font-display sm:text-3xl lg:text-4xl">AI</span>
+              <span className="text-sm text-muted-foreground">Health intelligence</span>
             </div>
             <div className="flex items-baseline gap-3">
               <span className="text-2xl font-display sm:text-3xl lg:text-4xl">E2E</span>
